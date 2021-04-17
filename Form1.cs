@@ -15,7 +15,7 @@ namespace Shool2
 {
     public partial class Form1 : Form
     {
-        public Settings _settings { get => settings; set => settings = value; }
+        private Settings _settings { get => settings; set => settings = value; }
         private Settings settings;
         public Form1()
         {
