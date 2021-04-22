@@ -110,5 +110,15 @@ namespace Shool2
         {
 
         }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -57,6 +57,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.studentTableAdapter = new Shool2.DatabaseDataSetTableAdapters.StudentTableAdapter();
             this.tableAdapterManager = new Shool2.DatabaseDataSetTableAdapters.TableAdapterManager();
+            this.button2 = new System.Windows.Forms.Button();
             nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -160,6 +161,7 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 18;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // studentBindingSource
             // 
@@ -292,6 +294,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.richTextBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(393, 0);
@@ -329,6 +332,16 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.StudentTableAdapter = this.studentTableAdapter;
             this.tableAdapterManager.UpdateOrder = Shool2.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(394, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 35);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Exit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -382,6 +395,7 @@
         private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button button2;
     }
 }
 
