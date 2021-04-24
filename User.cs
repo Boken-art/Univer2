@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shool2
 {
-    class Usere
+    class User
     {
         //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True
         public string name;
@@ -17,11 +17,11 @@ namespace Shool2
         public string pasword;
 
 
-        public Usere()
+        public User()
         {
 
         }
-        public Usere(string name, string sur, string year, string month, string day, string pasword)
+        public User(string name, string sur, string year, string month, string day, string pasword)
         {
             this.name = name;
             this.sur = sur;

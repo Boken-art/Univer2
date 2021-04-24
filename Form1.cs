@@ -33,7 +33,7 @@ namespace Shool2
         private void sendText(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
-            Usere object1 = new Usere(textBoxName.Text, textBoxSur.Text, textBoxYear.Text, textBoxMonth.Text, textBoxDay.Text, textBoxPasword.Text);
+            User object1 = new User(textBoxName.Text, textBoxSur.Text, textBoxYear.Text, textBoxMonth.Text, textBoxDay.Text, textBoxPasword.Text);
             richTextBox1.AppendText(object1.Name + " " + object1.Sur + " " + object1.Year + "/" + object1.Month + "/" + object1.Day + Environment.NewLine);
             //INSERT INTO Student(id,name,surename,birthdate,password,studentid) VALUES (NULL, textBoxName.Text, textBoxSur.Text,textBoxBirth.Text,textBoxPasword.Text)
                   using(SqlConnection conn = new SqlConnection(_settings.shoolConnString)) 
