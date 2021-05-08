@@ -20,7 +20,7 @@ namespace Shool2
         public Form1()
         {
             InitializeComponent();
-          
+
             textBoxPasword.PasswordChar = '*';
         }
 
@@ -36,12 +36,16 @@ namespace Shool2
             User object1 = new User(textBoxName.Text, textBoxSur.Text, textBoxYear.Text, textBoxMonth.Text, textBoxDay.Text, textBoxPasword.Text);
             richTextBox1.AppendText(object1.Name + " " + object1.Sur + " " + object1.Year + "/" + object1.Month + "/" + object1.Day + Environment.NewLine);
             //INSERT INTO Student(id,name,surename,birthdate,password,studentid) VALUES (NULL, textBoxName.Text, textBoxSur.Text,textBoxBirth.Text,textBoxPasword.Text)
-                  using(SqlConnection conn = new SqlConnection(_settings.shoolConnString)) 
+            using (SqlConnection conn = new SqlConnection(_settings.shoolConnString))
             {
                 conn.Open();
 
             }
-            
+
+        }
+        private void AddWork() 
+        { 
+           Work work1 = new Work(workname, studentid,predmetid,titul)
         }
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
@@ -119,6 +123,11 @@ namespace Shool2
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void surename_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

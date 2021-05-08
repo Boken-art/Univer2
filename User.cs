@@ -11,24 +11,22 @@ namespace Shool2
         //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True
         public string name;
         public string sur;
-        public string year;
-        public string month;
-        public string day;
+        public string reg_year;
         public string pasword;
-
+        public int userid;
+        public string label;
 
         public User()
         {
 
         }
-        public User(string name, string sur, string year, string month, string day, string pasword)
+        public User(string name, string sur, string pasword, int userid, string label)
         {
             this.name = name;
             this.sur = sur;
-            this.year = year;
-            this.month = month;
-            this.day = day;
+            this.userid = userid;
             this.pasword = pasword;
+            this.label = label;
         }
 
 
@@ -42,25 +40,21 @@ namespace Shool2
             get { return sur; }
             set { sur = value; }
         }
-        public string Year
-        {
-            get { return year; }
-            set { year = value; }
-        }
-        public string Month
-        {
-            get { return month; }
-            set { month = value; }
-        }
-        public string Day
-        {
-            get { return day; }
-            set { day = value; }
-        }
+        
         public string Pasword
         {
             get { return pasword; }
             set { pasword = value; }
+        }
+        public string RegYear
+        {
+            get { return reg_year; }
+            set { }
+        }
+        public string GetLabel
+        {
+            get { return label; }
+            set { }
         }
 
     }
