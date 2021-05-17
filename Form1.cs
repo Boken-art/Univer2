@@ -30,21 +30,37 @@ namespace Shool2
             this.studentTableAdapter.Fill(this.databaseDataSet.Student);
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
+
+        //TODO расписать все составляющие в программировании : переменная, объект, действие etc
+        // var, int (числовые знаечения), string, byte - типы данных или типы создаваемых переменных
+
+
+
         private void sendText(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
-            User object1 = new User(textBoxName.Text, textBoxSur.Text, textBoxYear.Text, textBoxMonth.Text, textBoxDay.Text, textBoxPasword.Text);
-            richTextBox1.AppendText(object1.Name + " " + object1.Sur + " " + object1.Year + "/" + object1.Month + "/" + object1.Day + Environment.NewLine);
-            //INSERT INTO Student(id,name,surename,birthdate,password,studentid) VALUES (NULL, textBoxName.Text, textBoxSur.Text,textBoxBirth.Text,textBoxPasword.Text)
+            //TODO создать поля и чекбокс
+            YearLabel.Text = DateTime.Now.Year.ToString();
+
+            Student new_student = new Student(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, checkBoxLabel.Value, curr_date );
+            richTextBox1.AppendText(new_student.Name + " " + new_student.Sur + " " + new_student.Year + "/" + new_student.Month + "/" + new_student.Day + Environment.NewLine);
+
+            var querry = "INSERT INTO Student(id,name,surename,birthdate,password,studentid) VALUES (NULL, textBoxName.Text, textBoxSur.Text,textBoxBirth.Text,textBoxPasword.Text)";
             using (SqlConnection conn = new SqlConnection(_settings.shoolConnString))
-            {
+            {   // Возьми коннект, добавь в него  {querry} и отправь
                 conn.Open();
 
             }
 
         }
-        private void AddWork() 
-        { 
+        // : current Date - year ->  public string reg_year;
+      // public string label;   -- checkBoxLabel //
+              //public int userid;
+
+
+
+        private void AddWork()
+        {
            Work work1 = new Work(workname, studentid,predmetid,titul)
         }
         private void textBoxName_TextChanged(object sender, EventArgs e)
