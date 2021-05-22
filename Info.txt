@@ -1,0 +1,11 @@
+Data types -  int(3948394),string("gfhjg"),var(universal),float(1,232),boolean(true or false),char("1"),  list,object,
+
+цыклы - for(),while,foreach
+
+условия- if else , if , switch
+
+Method(); метод это функцанал класса.
+Метод может быть пустой или мы можем передать данные, public void Method (){console mnam}; void = no return;
+
+public Construktor(string name){this.name = name}; он создоет обект;
+new Construktor();
