@@ -1,11 +1,36 @@
-Data types -  int(3948394),string("gfhjg"),var(universal),float(1,232),boolean(true or false),char("1"),  list,object,
 
-цыклы - for(),while,foreach
+Название элемента       Декларация(пример)                                        Вызов
+__________________________________________________________________________________________________________________
+Data types              int(0123456789)
+                        string("text")
+                        var(universal)
+                        float(1,232)
+                        boolean(true or false)
+                        char("1")
+                        list
+                        object
+                        ...
 
-условия- if else , if , switch
+циклы                   for (определенное кол-во итераций)                        for(i = 0; i <= Length; i++)
+                        while ( бесконечно )                                      while(true)
+                        foreach ( для каждого элемента в списке )                 TODO
 
-Method(); метод это функцанал класса.
-Метод может быть пустой или мы можем передать данные, public void Method (){console mnam}; void = no return;
+условия                 if ( любое кол-во условий)
+                        switch ( выбор из набора функций прописанных вручную )    switch :
+                                                                                    option_1 {}
+                                                                                    option_2 {}
+                                                                                    default
 
-public Construktor(string name){this.name = name}; он создоет обект;
-new Construktor();
+метод                   метод это функцанал класса                                Method(name);
+                        public void Method (){ do something } - не нужны данные
+                        public void Method (params){ do something } - нужны
+                        void - no return
+                        int - возвращает числовое значение
+                        string - возвращает текстовое значение
+                        ...
+
+конструктор             создает обект класса                                      new Construktor();
+                        public Construktor(){};
+                        public Construktor(string name){this.name = name};
+
+класс
