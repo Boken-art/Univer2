@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shool2
+﻿namespace Shool2
 {
     class User
     {
@@ -16,7 +10,7 @@ namespace Shool2
         public int userid;
         public string label;
 
-        public User(){}
+        public User() { }
 
         public User(string name, string sur, string pasword, int userid, string label)
         {

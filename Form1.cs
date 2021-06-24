@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.ComponentModel;
 using System.Data.SqlClient;
-using Npgsql;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Shool2
 {
@@ -40,10 +32,10 @@ namespace Shool2
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
             //TODO создать поля и чекбокс
-            YearLabel.Text = DateTime.Now.Year.ToString();
-
-            Student new_student = new Student(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, checkBoxLabel.Value, curr_date );
-            richTextBox1.AppendText(new_student.Name + " " + new_student.Sur + " " + new_student.Year + "/" + new_student.Month + "/" + new_student.Day + Environment.NewLine);
+            //YearLabel.Text = DateTime.Now.Year.ToString();
+                                                                // создать студента исходя из нового конструктора (который мы поменяли)
+            //Student new_student = new Student(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, checkBoxLabel.Value, curr_date);
+            //richTextBox1.AppendText(new_student.Name + " " + new_student.Sur + " " + new_student.Year + "/" + new_student.Month + "/" + new_student.Day + Environment.NewLine);
 
             var querry = "INSERT INTO Student(id,name,surename,birthdate,password,studentid) VALUES (NULL, textBoxName.Text, textBoxSur.Text,textBoxBirth.Text,textBoxPasword.Text)";
             using (SqlConnection conn = new SqlConnection(_settings.shoolConnString))
@@ -54,18 +46,18 @@ namespace Shool2
 
         }
         // : current Date - year ->  public string reg_year;
-      // public string label;   -- checkBoxLabel //
-              //public int userid;
+        // public string label;   -- checkBoxLabel //
+        //public int userid;
 
 
 
         private void AddWork()
         {
-           Work work1 = new Work(workname, studentid,predmetid,titul)
+            //Work work1 = new Work(workname, studentid, predmetid, titul)
         }
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
-           /*name1.Hide();*/
+            /*name1.Hide();*/
 
         }
 
