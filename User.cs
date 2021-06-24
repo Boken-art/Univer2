@@ -16,10 +16,8 @@ namespace Shool2
         public int userid;
         public string label;
 
-        public User()
-        {
+        public User(){}
 
-        }
         public User(string name, string sur, string pasword, int userid, string label)
         {
             this.name = name;
@@ -40,7 +38,7 @@ namespace Shool2
             get { return sur; }
             set { sur = value; }
         }
-        
+
         public string Pasword
         {
             get { return pasword; }
