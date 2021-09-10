@@ -35,7 +35,31 @@ namespace Shool2
             
             // создать студента исходя из нового конструктора (который мы поменяли)
 
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, 1 , "user" );
+            richTextBox1.AppendText(user.name + Environment.NewLine);
+            
+            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ user.name +".txt";
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.Write(user.name + "/");
+                    sw.WriteLine(user.pasword);
+                    
+                }	
+            }
 
+            // Open the file to read from.
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            
         }
 
 
@@ -127,6 +151,11 @@ namespace Shool2
         private void nameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
