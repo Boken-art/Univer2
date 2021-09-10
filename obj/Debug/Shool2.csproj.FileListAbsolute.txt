@@ -21,7 +21,6 @@ D:\Shool2\obj\Debug\Shool2.csproj.GenerateResource.cache
 D:\Shool2\obj\Debug\Shool2.csproj.CoreCompileInputs.cache
 D:\Shool2\obj\Debug\Shool2.exe
 D:\Shool2\obj\Debug\Shool2.pdb
-C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csprojAssemblyReference.cache
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.Form1.resources
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.Info.resources
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.Properties.Resources.resources
@@ -89,7 +88,6 @@ C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\System.Text.Json.xml
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\System.Threading.Channels.xml
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\System.ValueTuple.xml
-C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.CopyComplete
 D:\Shool2\Univer\bin\Debug\Database1.mdf
 D:\Shool2\Univer\bin\Debug\Database1_log.ldf
 D:\Shool2\Univer\bin\Debug\Shool2.exe.config
@@ -159,3 +157,4 @@ D:\Shool2\Univer\obj\Debug\Shool2.csproj.CoreCompileInputs.cache
 D:\Shool2\Univer\obj\Debug\Shool2.csproj.CopyComplete
 D:\Shool2\Univer\obj\Debug\Shool2.exe
 D:\Shool2\Univer\obj\Debug\Shool2.pdb
+C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.AssemblyReference.cache
