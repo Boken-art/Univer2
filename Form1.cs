@@ -10,13 +10,18 @@ namespace Shool2
     {
         private Settings _settings { get => settings; set => settings = value; }
         private Settings settings;
+        private readonly Random _random = new Random();  
+        private string label = "user";
+        
+        private int min = 10000;
+        private int max = 20000;
         public Form1()
         {
             InitializeComponent();
 
             textBoxPasword.PasswordChar = '*';
         }
-
+       
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.Student' table. You can move, or remove it, as needed.
@@ -30,13 +35,18 @@ namespace Shool2
         private void sendText(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
-            //TODO создать поля и чекбокс
-            //YearLabel.Text = DateTime.Now.Year.ToString();
+          
+//TODO random id a
             
-            // создать студента исходя из нового конструктора (который мы поменяли)
+             
+        
+            int userid = _random.Next(min, max);  
 
-            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, 1 , "user" );
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, userid , label );
             richTextBox1.AppendText(user.name + Environment.NewLine);
+            
+            
+      
             
             string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ user.name +".txt";
             if (!File.Exists(path))
@@ -44,12 +54,14 @@ namespace Shool2
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(path))
                 {
+                    sw.Write(userid +"/");
                     sw.Write(user.name + "/");
+                    sw.Write(label+ "/");
                     sw.WriteLine(user.pasword);
                     
                 }	
             }
-
+            //todo make textove pole pro vyhledavani uzivatelu 
             // Open the file to read from.
             using (StreamReader sr = File.OpenText(path))
             {
@@ -155,7 +167,13 @@ namespace Shool2
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+
+            label = "Student";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+             label = "Teacher";
         }
     }
 }
