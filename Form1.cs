@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Shool2
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialSkin.Controls.MaterialForm
     {
         private Settings _settings { get => settings; set => settings = value; }
         private Settings settings;
@@ -19,7 +19,6 @@ namespace Shool2
         {
             InitializeComponent();
 
-            textBoxPasword.PasswordChar = '*';
         }
        
         private void Form1_Load(object sender, EventArgs e)
@@ -42,13 +41,13 @@ namespace Shool2
         
             int userid = _random.Next(min, max);  
 
-            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPasword.Text, userid , label );
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid , label );
             richTextBox1.AppendText(user.name + Environment.NewLine);
-            
-            
-      
-            
-            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ user.name +".txt";
+
+
+
+            //C:\Users\hioli\OneDrive\Рабочий стол\output\
+            string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
             if (!File.Exists(path))
             {
                 // Create a file to write to.
@@ -71,7 +70,6 @@ namespace Shool2
                     Console.WriteLine(s);
                 }
             }
-            
         }
 
 
