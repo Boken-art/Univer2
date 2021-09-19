@@ -228,3 +228,4 @@ E:\Git\obj\Debug\Shool2.csproj.CopyComplete
 E:\Git\obj\Debug\Shool2.exe
 E:\Git\obj\Debug\Shool2.pdb
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\MaterialSkin.dll
+C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.SuggestedBindingRedirects.cache

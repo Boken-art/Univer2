@@ -70,7 +70,6 @@ namespace Shool2
                     Console.WriteLine(s);
                 }
             }
-            
         }
 
 

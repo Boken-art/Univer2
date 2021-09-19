@@ -113,7 +113,7 @@
             this.button1.MouseState = MaterialSkin.MouseState.HOVER;
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(206, 50);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Create User";
             this.button1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.button1.UseAccentColor = false;
@@ -133,7 +133,7 @@
             this.textBoxName.Multiline = false;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(206, 50);
-            this.textBoxName.TabIndex = 6;
+            this.textBoxName.TabIndex = 1;
             this.textBoxName.Text = "";
             this.textBoxName.TrailingIcon = null;
             // 
@@ -150,7 +150,7 @@
             this.textBoxSur.Multiline = false;
             this.textBoxSur.Name = "textBoxSur";
             this.textBoxSur.Size = new System.Drawing.Size(206, 50);
-            this.textBoxSur.TabIndex = 6;
+            this.textBoxSur.TabIndex = 2;
             this.textBoxSur.Text = "";
             this.textBoxSur.TrailingIcon = null;
             // 
@@ -168,7 +168,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Password = true;
             this.textBoxPassword.Size = new System.Drawing.Size(206, 50);
-            this.textBoxPassword.TabIndex = 6;
+            this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Text = "";
             this.textBoxPassword.TrailingIcon = null;
             // 
@@ -199,7 +199,7 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Ripple = true;
             this.radioButton2.Size = new System.Drawing.Size(92, 37);
-            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Teacher";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -208,14 +208,16 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBox1.Depth = 0;
-            this.richTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.richTextBox1.Location = new System.Drawing.Point(17, 638);
             this.richTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(296, 234);
-            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
             // materialCard1
@@ -252,7 +254,7 @@
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
             this.materialTextBox1.Size = new System.Drawing.Size(232, 50);
-            this.materialTextBox1.TabIndex = 8;
+            this.materialTextBox1.TabIndex = 7;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
             // 
@@ -279,12 +281,12 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(53, 139);
+            this.materialButton1.Location = new System.Drawing.Point(53, 131);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(232, 40);
-            this.materialButton1.TabIndex = 9;
+            this.materialButton1.Size = new System.Drawing.Size(232, 50);
+            this.materialButton1.TabIndex = 8;
             this.materialButton1.Text = "Search";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
@@ -294,14 +296,16 @@
             // 
             this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialMultiLineTextBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.materialMultiLineTextBox1.Depth = 0;
-            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialMultiLineTextBox1.Location = new System.Drawing.Point(516, 318);
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
+            this.materialMultiLineTextBox1.ReadOnly = true;
             this.materialMultiLineTextBox1.Size = new System.Drawing.Size(321, 554);
-            this.materialMultiLineTextBox1.TabIndex = 10;
+            this.materialMultiLineTextBox1.TabIndex = 12;
             this.materialMultiLineTextBox1.Text = "";
             // 
             // materialDivider1
@@ -317,7 +321,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(857, 891);
             this.Controls.Add(this.materialDivider1);
