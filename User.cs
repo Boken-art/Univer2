@@ -5,7 +5,6 @@
         //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True
         public string name;
         public string sur;
-        public string reg_year;
         public string pasword;
         public int userid;
         public string label;
@@ -37,11 +36,6 @@
         {
             get { return pasword; }
             set { pasword = value; }
-        }
-        public string RegYear
-        {
-            get { return reg_year; }
-            set { }
         }
         public string GetLabel
         {
