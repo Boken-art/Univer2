@@ -1,13 +1,1 @@
-
-.vs/Shool2/v17/.suo
-bin/Debug/Database1_log.ldf
-*.ldf
-obj/Debug/DesignTimeResolveAssemblyReferences.cache
-*.cache
-obj/Debug/Shool2.csproj.AssemblyReference.cache
-*.cache
-obj/Debug/Shool2.csproj.CopyComplete
-*.txt
-obj/Debug/Shool2.csproj.FileListAbsolute.txt
-obj/Debug/Shool2.csproj.GenerateResource.cache
 *.cache
