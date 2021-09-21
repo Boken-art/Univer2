@@ -3,6 +3,7 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+//using System.IO.File;
 
 namespace Shool2
 {
@@ -44,10 +45,10 @@ namespace Shool2
             User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid , label );
             richTextBox1.AppendText(user.name + Environment.NewLine);
 
-
-
-            //C:\Users\hioli\OneDrive\Рабочий стол\output\
-            string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
+            
+           // string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
+           string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + user.name +".txt";
+           
             if (!File.Exists(path))
             {
                 // Create a file to write to.
@@ -62,14 +63,7 @@ namespace Shool2
             }
             //todo make textove pole pro vyhledavani uzivatelu 
             // Open the file to read from.
-            using (StreamReader sr = File.OpenText(path))
-            {
-                string s = "";
-                while ((s = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }
-            }
+           
         }
 
 
@@ -173,5 +167,38 @@ namespace Shool2
         {
              label = "Teacher";
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ materialTextBox1.Text+".txt";
+            string fileData = File.ReadAllText(pathLocal);
+            
+            
+            using (StreamReader sr = File.OpenText(pathLocal))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    materialMultiLineTextBox1.AppendText(s);
+                }
+            }
+        }
+
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void materialTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+        private void materialCard3_Paint(object sender, EventArgs e)
+        {
+            
+        }
+       
+
+
+        
     }
 }
