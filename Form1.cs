@@ -25,7 +25,7 @@ namespace Shool2
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.Student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.databaseDataSet.Student);
+            //this.studentTableAdapter.Fill(this.databaseDataSet.Student);
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
 
@@ -168,16 +168,10 @@ namespace Shool2
              label = "Teacher";
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void materialButton1_Click(object sender, EventArgs e) //LOGIN
         {
             string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ materialTextBox1.Text+".txt";
             string fileData = File.ReadAllText(pathLocal);
-            
-            textBox_Name.Clear();
-            textBox_Type.Clear();
-            textBox_ID.Clear();
-            
-         
             
             using (StreamReader sr = File.OpenText(pathLocal))
             {
@@ -185,38 +179,34 @@ namespace Shool2
                 int counter = 1;
                 while ((s = sr.ReadLine()) != null)
                 {
-                    
-                   string[] items = s.Split('/');
-                   foreach (var item in items)
-                   {
-                       if (counter == 1)
-                       {
-                           textBox_ID.AppendText($"{item}");
-                       } 
-                       else if (counter ==2)
-                       {
-                           textBox_Name.AppendText($"{item}");
-                       }
-                       else if (counter == 3)
-                       {
-                           textBox_Type.AppendText($"{item}");
-                       }
-                       else
-                       {
-                           
-                       }
-                       counter ++ ;
-                       
-                       materialMultiLineTextBox1.AppendText($"{item}" + " ");
-                   }
-                   materialMultiLineTextBox1.AppendText("\n");
-                }
 
-                counter = 1;
+                    string[] items = s.Split('/');
+                    var user_password = items[3];
+                    var user_type = items[2];
+
+                    string actual_password = loginPasswordBox.Text;
+                    if (user_password != actual_password)
+                    {
+                        Console.WriteLine("Error");
+                        Exit();
+                    }
+
+
+                }
             }
         }
 
-        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        private void materialButton1_CreateWork(object sender, EventArgs e)
+        {
+
+            if (user_type == "student")
+            {
+                //create work Append (добавляем строку)
+            }
+            //TODO
+        }
+
+            private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {
             
         }
@@ -229,7 +219,6 @@ namespace Shool2
             
         }
 
-
-       
+      
     }
 }
