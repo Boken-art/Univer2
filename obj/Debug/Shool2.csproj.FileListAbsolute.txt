@@ -218,15 +218,15 @@ E:\Git\bin\Debug\System.Text.Json.xml
 E:\Git\bin\Debug\System.Threading.Channels.xml
 E:\Git\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Git\bin\Debug\System.ValueTuple.xml
-E:\Git\obj\Debug\Shool2.csprojAssemblyReference.cache
 E:\Git\obj\Debug\Shool2.Form1.resources
 E:\Git\obj\Debug\Shool2.Info.resources
 E:\Git\obj\Debug\Shool2.Properties.Resources.resources
 E:\Git\obj\Debug\Shool2.csproj.GenerateResource.cache
 E:\Git\obj\Debug\Shool2.csproj.CoreCompileInputs.cache
-E:\Git\obj\Debug\Shool2.csproj.CopyComplete
 E:\Git\obj\Debug\Shool2.exe
 E:\Git\obj\Debug\Shool2.pdb
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\MaterialSkin.dll
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.SuggestedBindingRedirects.cache
 E:\Git\bin\Debug\MaterialSkin.dll
+E:\Git\obj\Debug\Shool2.csproj.AssemblyReference.cache
+E:\Git\obj\Debug\Shool2.csproj.SuggestedBindingRedirects.cache

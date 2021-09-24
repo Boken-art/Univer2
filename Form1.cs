@@ -61,7 +61,7 @@ namespace Shool2
                     
                 }	
             }
-            //todo make textove pole pro vyhledavani uzivatelu 
+            //todo stahnou VS 2022, udelej 4 pole pro vypis uzivatele 
             // Open the file to read from.
            
         }
@@ -173,14 +173,46 @@ namespace Shool2
             string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ materialTextBox1.Text+".txt";
             string fileData = File.ReadAllText(pathLocal);
             
+            textBox_Name.Clear();
+            textBox_Type.Clear();
+            textBox_ID.Clear();
+            
+         
             
             using (StreamReader sr = File.OpenText(pathLocal))
             {
                 string s = "";
+                int counter = 1;
                 while ((s = sr.ReadLine()) != null)
                 {
-                    materialMultiLineTextBox1.AppendText(s);
+                    
+                   string[] items = s.Split('/');
+                   foreach (var item in items)
+                   {
+                       if (counter == 1)
+                       {
+                           textBox_ID.AppendText($"{item}");
+                       } 
+                       else if (counter ==2)
+                       {
+                           textBox_Name.AppendText($"{item}");
+                       }
+                       else if (counter == 3)
+                       {
+                           textBox_Type.AppendText($"{item}");
+                       }
+                       else
+                       {
+                           
+                       }
+                       counter ++ ;
+                       
+                       materialMultiLineTextBox1.AppendText($"{item}" + " ");
+                   }
+                   materialMultiLineTextBox1.AppendText("\n");
                 }
+
+                counter = 1;
             }
         }
 
@@ -196,9 +228,8 @@ namespace Shool2
         {
             
         }
+
+
        
-
-
-        
     }
 }

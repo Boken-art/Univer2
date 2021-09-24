@@ -24,12 +24,17 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c2a085000e324638b307e9a7da0753f9350b78/41/355fe213/DbConnectionInternal.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1xp0XAzcvgMWD8fjAqROQWym5jO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -73,7 +78,8 @@
       <workItem from="1631894632157" duration="7432000" />
       <workItem from="1632237997524" duration="49000" />
       <workItem from="1632238074137" duration="2875000" />
-      <workItem from="1632241621856" duration="3301000" />
+      <workItem from="1632241621856" duration="6219000" />
+      <workItem from="1632497822303" duration="3499000" />
     </task>
     <servers />
   </component>
@@ -93,6 +99,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

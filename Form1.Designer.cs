@@ -46,10 +46,16 @@
             this.richTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.textBox_ID = new System.Windows.Forms.TextBox();
+            this.textBox_Type = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
@@ -257,6 +263,24 @@
             this.materialCard2.Size = new System.Drawing.Size(321, 223);
             this.materialCard2.TabIndex = 9;
             // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Hint = "Who we are looking for ?";
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(53, 38);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(232, 50);
+            this.materialTextBox1.TabIndex = 7;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            this.materialTextBox1.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged_1);
+            // 
             // materialButton1
             // 
             this.materialButton1.AutoSize = false;
@@ -277,24 +301,6 @@
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // materialTextBox1
-            // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.Hint = "Who we are looking for ?";
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(53, 38);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(232, 50);
-            this.materialTextBox1.TabIndex = 7;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            this.materialTextBox1.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged_1);
-            // 
             // materialMultiLineTextBox1
             // 
             this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
@@ -307,7 +313,7 @@
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
             this.materialMultiLineTextBox1.ReadOnly = true;
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(321, 554);
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(321, 68);
             this.materialMultiLineTextBox1.TabIndex = 12;
             this.materialMultiLineTextBox1.Text = "";
             // 
@@ -322,11 +328,68 @@
             this.materialDivider1.TabIndex = 11;
             this.materialDivider1.Text = "materialDivider1";
             // 
+            // textBox_Name
+            // 
+            this.textBox_Name.Location = new System.Drawing.Point(516, 411);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(237, 20);
+            this.textBox_Name.TabIndex = 13;
+            // 
+            // textBox_ID
+            // 
+            this.textBox_ID.Location = new System.Drawing.Point(516, 463);
+            this.textBox_ID.Name = "textBox_ID";
+            this.textBox_ID.Size = new System.Drawing.Size(237, 20);
+            this.textBox_ID.TabIndex = 14;
+            // 
+            // textBox_Type
+            // 
+            this.textBox_Type.Location = new System.Drawing.Point(516, 437);
+            this.textBox_Type.Name = "textBox_Type";
+            this.textBox_Type.Size = new System.Drawing.Size(237, 20);
+            this.textBox_Type.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(759, 411);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Name";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(759, 437);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Type";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(759, 463);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "ID";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(857, 891);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_Type);
+            this.Controls.Add(this.textBox_ID);
+            this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.materialMultiLineTextBox1);
             this.Controls.Add(this.materialCard2);
@@ -345,7 +408,23 @@
             this.materialCard1.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
+
+        private System.Windows.Forms.TextBox textBox_Type;
+
+        
+
+        private System.Windows.Forms.TextBox textBox_Name;
+
+        private System.Windows.Forms.TextBox textBox_ID;
+
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.Label label1;
+
+      
 
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
 
