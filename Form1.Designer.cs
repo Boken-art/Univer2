@@ -32,9 +32,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Shool2.DatabaseDataSet();
-            this.studentTableAdapter = new Shool2.DatabaseDataSetTableAdapters.StudentTableAdapter();
-            this.tableAdapterManager = new Shool2.DatabaseDataSetTableAdapters.TableAdapterManager();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new MaterialSkin.Controls.MaterialButton();
@@ -56,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
@@ -66,21 +62,6 @@
             // studentBindingSource
             // 
             this.studentBindingSource.RaiseListChangedEvents = false;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.StudentTableAdapter = this.studentTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Shool2.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // pictureBox2
             // 
@@ -382,7 +363,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
@@ -411,10 +391,7 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
 
         #endregion
-        private Shool2.DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private DatabaseDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
-        private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton button1;

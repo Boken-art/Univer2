@@ -28,8 +28,6 @@ C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.GenerateResource
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.CoreCompileInputs.cache
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.exe
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.pdb
-C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\Database1.mdf
-C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\Database1_log.ldf
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\Shool2.exe.config
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\Shool2.exe
 C:\Users\rothm\Documents\GitHub\Univer2\bin\Debug\Shool2.pdb

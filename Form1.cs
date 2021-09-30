@@ -24,8 +24,6 @@ namespace Shool2
        
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.Student' table. You can move, or remove it, as needed.
-            //this.studentTableAdapter.Fill(this.databaseDataSet.Student);
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
 
@@ -176,7 +174,6 @@ namespace Shool2
             using (StreamReader sr = File.OpenText(pathLocal))
             {
                 string s = "";
-                int counter = 1;
                 while ((s = sr.ReadLine()) != null)
                 {
 
@@ -184,12 +181,12 @@ namespace Shool2
                     var user_password = items[3];
                     var user_type = items[2];
 
-                    string actual_password = loginPasswordBox.Text;
+                    /*string actual_password = loginPasswordBox.Text;
                     if (user_password != actual_password)
                     {
                         Console.WriteLine("Error");
                         Exit();
-                    }
+                    }*/
 
 
                 }
@@ -199,11 +196,12 @@ namespace Shool2
         private void materialButton1_CreateWork(object sender, EventArgs e)
         {
 
-            if (user_type == "student")
+            /*if (user_type == "student")
             {
                 //create work Append (добавляем строку)
             }
             //TODO
+            */
         }
 
             private void materialTextBox1_TextChanged(object sender, EventArgs e)
