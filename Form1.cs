@@ -161,36 +161,44 @@ namespace Shool2
             label = "Student";
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButton2_CheckedChange (object sender, EventArgs e)
         {
              label = "Teacher";
         }
 
         private void materialButton1_Click(object sender, EventArgs e) //LOGIN
         {
-            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\"+ materialTextBox1.Text+".txt";
-            string fileData = File.ReadAllText(pathLocal);
+            //Check login
+            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text+ ".txt";
             
-            using (StreamReader sr = File.OpenText(pathLocal))
+            if(string fileData = File.ReadAllText(pathLocal)) //Check user exists
             {
-                string s = "";
-                while ((s = sr.ReadLine()) != null)
+                var user_password = "";
+                using (StreamReader sr = File.OpenText(pathLocal))
                 {
 
-                    string[] items = s.Split('/');
-                    var user_password = items[3];
-                    var user_type = items[2];
-
-                    /*string actual_password = loginPasswordBox.Text;
-                    if (user_password != actual_password)
+                    string s = "";
+                    //Check user file not empty
+                    while ((s = sr.ReadLine()) != null)
                     {
-                        Console.WriteLine("Error");
-                        Exit();
-                    }*/
+                        string[] items = s.Split('/');
+                        user_password = items[3];
+                        var user_type = items[2];
+                    }
 
-
+                    //Check password correct
+                    if (user_password != materialTextBox2.Text)
+                    {
+                        richTextBox1.AppendText("Password error  \n");
+                    }
                 }
+                richTextBox1.AppendText("Login successful \n"); //После всех действий - сообщение ОК
+            }else
+            {
+                richTextBox1.AppendText("Login error \n"); //Если логин не совпал  - сообщение Не ОК
             }
+
+
         }
 
         private void materialButton1_CreateWork(object sender, EventArgs e)

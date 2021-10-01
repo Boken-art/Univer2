@@ -156,8 +156,6 @@ D:\Shool2\Univer\obj\Debug\Shool2.csproj.CopyComplete
 D:\Shool2\Univer\obj\Debug\Shool2.exe
 D:\Shool2\Univer\obj\Debug\Shool2.pdb
 C:\Users\rothm\Documents\GitHub\Univer2\obj\Debug\Shool2.csproj.AssemblyReference.cache
-E:\Git\bin\Debug\Database1.mdf
-E:\Git\bin\Debug\Database1_log.ldf
 E:\Git\bin\Debug\Shool2.exe.config
 E:\Git\bin\Debug\Shool2.exe
 E:\Git\bin\Debug\Shool2.pdb
