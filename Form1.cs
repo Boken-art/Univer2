@@ -27,14 +27,13 @@ namespace Shool2
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
 
-        //TODO расписать все составляющие в программировании : переменная, объект, действие etc
-        // var, int (числовые знаечения), string, byte - типы данных или типы создаваемых переменных
+      
 
         private void sendText(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
           
-//TODO random id a
+
             
              
         
@@ -59,8 +58,7 @@ namespace Shool2
                     
                 }	
             }
-            //todo stahnou VS 2022, udelej 4 pole pro vypis uzivatele 
-            // Open the file to read from.
+          
            
         }
 
@@ -170,9 +168,10 @@ namespace Shool2
         {
             //Check login
             string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text+ ".txt";
-            
-            if(string fileData = File.ReadAllText(pathLocal)) //Check user exists
+
+            try 
             {
+                File.ReadAllText(pathLocal);
                 var user_password = "";
                 using (StreamReader sr = File.OpenText(pathLocal))
                 {
@@ -193,7 +192,7 @@ namespace Shool2
                     }
                 }
                 richTextBox1.AppendText("Login successful \n"); //После всех действий - сообщение ОК
-            }else
+            }catch (Exception ex )
             {
                 richTextBox1.AppendText("Login error \n"); //Если логин не совпал  - сообщение Не ОК
             }
@@ -225,6 +224,35 @@ namespace Shool2
             
         }
 
-      
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void panel1_DragDrop(object sender, DragEventArgs e)
+        {
+            string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
+            string[] fileGet = (string[])e.Data.GetData(DataFormats.FileDrop);
+            string fileNewplace = fileGet[0];
+            File.Create(fileNewplace);
+            
+
+            /* if (File.Exists(pathFile))
+             {
+                 File.Copy(F, pathFile);
+             }*/
+
+
+            //string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
+           // if (files == null || files.Length == 0) return;
+              //  textBox1.Text = files.First(); 
+
+        }
+        
     }
 }
