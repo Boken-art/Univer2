@@ -253,6 +253,33 @@ namespace Shool2
               //  textBox1.Text = files.First(); 
 
         }
-        
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output" + materialTextBox1.Text + ".txt";
+
+            try
+            {
+                File.ReadAllText(path);
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    while(!sr.EndOfStream)
+                    {
+                        if (string.Compare("work;", sr.ReadLine()))
+                        {
+                            //вытащить абзац и выписать его в техт бох
+                        }
+                    }
+                }
+
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            } 
+        }
     }
 }
+
+                 [              LEVEL 1       OPEN FILE (С ЧЕМ РАБОТАЕМ)                            ]
+                     [          LEVEL 2       READ FILE (СЧИТЫВАЕМ ТО С ЧЕМ РАБОТАЕМ)      ]
+                          [     LEVEL 3       ВСЕ ЧТО УГОДНО                     ] 
