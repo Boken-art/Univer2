@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 //using System.IO.File;
+using System.Text;
 
 namespace Shool2
 {
@@ -195,7 +196,7 @@ namespace Shool2
             }catch (Exception ex )
             {
                 richTextBox1.AppendText("Login error \n"); //Если логин не совпал  - сообщение Не ОК
-            }
+            }   //FIXME error with correct login
 
 
         }
@@ -256,8 +257,9 @@ namespace Shool2
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output" + materialTextBox1.Text + ".txt";
-
+            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
+            StringBuilder text = new StringBuilder();
+         
             try
             {
                 File.ReadAllText(path);
@@ -265,11 +267,20 @@ namespace Shool2
                 {
                     while(!sr.EndOfStream)
                     {
-                        if (string.Compare("work;", sr.ReadLine()))
+                        if ( string.Compare("work;", sr.ReadLine()) == 0 )
                         {
-                            //вытащить абзац и выписать его в техт бох
+                            text.Append(sr.ReadLine());
+                            s
+                            while (string.Compare("work2;", sr.ReadLine()) != 0)
+                            {
+                                text.Append(sr.ReadLine());
+                            }
+                             
+                            
                         }
+                                //вытащить абзац и выписать его в техт бох
                     }
+                        richTextBox2.AppendText(text.ToString());   
                 }
 
             }catch (Exception ex)
@@ -279,7 +290,3 @@ namespace Shool2
         }
     }
 }
-
-                 [              LEVEL 1       OPEN FILE (С ЧЕМ РАБОТАЕМ)                            ]
-                     [          LEVEL 2       READ FILE (СЧИТЫВАЕМ ТО С ЧЕМ РАБОТАЕМ)      ]
-                          [     LEVEL 3       ВСЕ ЧТО УГОДНО                     ] 
