@@ -233,6 +233,11 @@ namespace Shool2
         private void panel1_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.All;
+            if(e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] fileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);   
+            }
+                // Login -> D&D файла -> Считываем и добавляек к файлу юзера
         }
 
         private void panel1_DragDrop(object sender, DragEventArgs e)
@@ -243,12 +248,24 @@ namespace Shool2
             File.Create(fileNewplace);
             
 
+
+            using (OpenFileDialog dialog = new OpenFileDialog())  
+            {  
+                if (dialog.ShowDialog() == DialogResult.OK)  
+                {  
+                    panel1.Text = dialog.FileName;
+
+
+                    //richTextBox2.AppendText(blabla);
+                }  
+            }  
+            
+            
+            
             /* if (File.Exists(pathFile))
              {
                  File.Copy(F, pathFile);
              }*/
-
-
             //string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
            // if (files == null || files.Length == 0) return;
               //  textBox1.Text = files.First(); 
@@ -258,35 +275,36 @@ namespace Shool2
         private void button2_Click_1(object sender, EventArgs e)
         {
             string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
+            string logPath = @"C:\Users\hioli\OneDrive\Рабочий стол\output\log.txt";
             StringBuilder text = new StringBuilder();
+            string loosePart = "";
          
-            try
-            {
+            try{
                 File.ReadAllText(path);
                 using (StreamReader sr = File.OpenText(path))
                 {
-                    while(!sr.EndOfStream)
+                    while (!sr.EndOfStream)
                     {
                         if ( string.Compare("work;", sr.ReadLine()) == 0 )
                         {
-                            text.Append(sr.ReadLine());
-                            s
-                            while (string.Compare("work2;", sr.ReadLine()) != 0)
-                            {
-                                text.Append(sr.ReadLine());
-                            }
-                             
-                            
-                        }
-                                //вытащить абзац и выписать его в техт бох
-                    }
-                        richTextBox2.AppendText(text.ToString());   
-                }
+                            while(sr.Peek() >= 0){   //TODO выбрать номер работы
 
+                                text.Append(sr.ReadLine());
+                                
+                                if (string.Compare("end;", sr.ReadLine()) == 0 )
+                                {
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
+                            richTextBox2.AppendText(text.ToString());   
+                }
             }catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            } 
+                {
+                    Console.WriteLine(ex);   //TODO сохранять логи ошибок в файл
+                } 
         }
     }
 }
