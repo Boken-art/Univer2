@@ -349,7 +349,7 @@ namespace Shool2
                     Console.WriteLine(ex);   //TODO сохранять логи ошибок в файл
                 }
             }
-        }
+        
     }
 }
 
