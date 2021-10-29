@@ -12,9 +12,9 @@ namespace Shool2
     {
         private Settings _settings { get => settings; set => settings = value; }
         private Settings settings;
-        private readonly Random _random = new Random();  
+        private readonly Random _random = new Random();
         private string label = "user";
-        
+
         private int min = 10000;
         private int max = 20000;
         public Form1()
@@ -22,45 +22,45 @@ namespace Shool2
             InitializeComponent();
 
         }
-       
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
 
-      
+
 
         private void sendText(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
-          
 
-            
-             
-        
-            int userid = _random.Next(min, max);  
 
-            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid , label );
+
+
+
+            int userid = _random.Next(min, max);
+
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid, label);
             richTextBox1.AppendText(user.name + Environment.NewLine);
 
-            
-           // string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
-           string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + user.name +".txt";
-           
+
+            // string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
+            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + user.name + ".txt";
+
             if (!File.Exists(path))
             {
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.Write(userid +"/");
+                    sw.Write(userid + "/");
                     sw.Write(user.name + "/");
-                    sw.Write(label+ "/");
+                    sw.Write(label + "/");
                     sw.WriteLine(user.pasword);
-                    
-                }	
+
+                }
             }
-          
-           
+
+
         }
 
 
@@ -160,17 +160,17 @@ namespace Shool2
             label = "Student";
         }
 
-        private void radioButton2_CheckedChange (object sender, EventArgs e)
+        private void radioButton2_CheckedChange(object sender, EventArgs e)
         {
-             label = "Teacher";
+            label = "Teacher";
         }
 
         private void materialButton1_Click(object sender, EventArgs e) //LOGIN
         {
             //Check login
-            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text+ ".txt";
+            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
 
-            try 
+            try
             {
                 File.ReadAllText(pathLocal);
                 var user_password = "";
@@ -193,7 +193,7 @@ namespace Shool2
                     }
                 }
                 richTextBox1.AppendText("Login successful \n"); //После всех действий - сообщение ОК
-            }catch (Exception ex )
+            } catch (Exception ex)
             {
                 richTextBox1.AppendText("Login error \n"); //Если логин не совпал  - сообщение Не ОК
             }   //FIXME error with correct login
@@ -212,17 +212,17 @@ namespace Shool2
             */
         }
 
-            private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void materialTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            
+
         }
         private void materialCard3_Paint(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -232,12 +232,12 @@ namespace Shool2
 
         private void panel1_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.All;
-            if(e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] fileList = (string[])e.Data.GetData(DataFormats.FileDrop, false);   
-            }
-                // Login -> D&D файла -> Считываем и добавляек к файлу юзера
+
+
+
+
+
+            // Login -> D&D файла -> Считываем и добавляек к файлу юзера
         }
 
         private void panel1_DragDrop(object sender, DragEventArgs e)
@@ -246,65 +246,110 @@ namespace Shool2
             string[] fileGet = (string[])e.Data.GetData(DataFormats.FileDrop);
             string fileNewplace = fileGet[0];
             File.Create(fileNewplace);
-            
+
+            e.Effect = DragDropEffects.All;
+            StringBuilder text = new StringBuilder();
 
 
-            using (OpenFileDialog dialog = new OpenFileDialog())  
+            //string path = @"";
+            string token = "@";
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+
+                try
+                {
+                    File.ReadAllText(files[0]);
+                    using (StreamReader sr = File.OpenText(files[0]))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            if (string.Compare("work;", sr.ReadLine()) == 0)
+                            {
+                                while (sr.Peek() >= 0)
+                                {   //TODO выбрать номер работы
+
+                                    text.Append(sr.ReadLine());
+
+                                    if (string.Compare("end;", sr.ReadLine()) == 0)
+                                    {
+                                        break;
+                                    }
+
+                                }
+                            }
+                        }
+                        richTextBox2.AppendText(text.ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);   //TODO сохранять логи ошибок в файл
+                }
+
+
+
+            }
+
+            /*using (OpenFileDialog dialog = new OpenFileDialog())  
             {  
                 if (dialog.ShowDialog() == DialogResult.OK)  
                 {  
                     panel1.Text = dialog.FileName;
-
-
                     //richTextBox2.AppendText(blabla);
                 }  
-            }  
-            
-            
-            
+            }  */
+
+
+
             /* if (File.Exists(pathFile))
              {
                  File.Copy(F, pathFile);
              }*/
             //string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
-           // if (files == null || files.Length == 0) return;
-              //  textBox1.Text = files.First(); 
+            // if (files == null || files.Length == 0) return;
+            //  textBox1.Text = files.First(); 
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
-            string logPath = @"C:\Users\hioli\OneDrive\Рабочий стол\output\log.txt";
-            StringBuilder text = new StringBuilder();
-            string loosePart = "";
-         
-            try{
-                File.ReadAllText(path);
-                using (StreamReader sr = File.OpenText(path))
+            private void button2_Click_1(object sender, EventArgs e)
+            {
+                string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
+                string logPath = @"C:\Users\hioli\OneDrive\Рабочий стол\output\log.txt";
+                StringBuilder text = new StringBuilder();
+                string loosePart = "";
+                //todo Why read dont work 
+                try 
                 {
-                    while (!sr.EndOfStream)
+                    File.ReadAllText(path);
+                    using (StreamReader sr = File.OpenText(path))
                     {
-                        if ( string.Compare("work;", sr.ReadLine()) == 0 )
+                        while (!sr.EndOfStream)
                         {
-                            while(sr.Peek() >= 0){   //TODO выбрать номер работы
+                            if (string.Compare("work;", sr.ReadLine()) == 0)
+                            {
+                                while (sr.Peek() >= 0) 
+                                {   //TODO выбрать номер работы
 
-                                text.Append(sr.ReadLine());
-                                
-                                if (string.Compare("end;", sr.ReadLine()) == 0 )
-                                {
-                                    break;
+                                    text.Append(sr.ReadLine());
+
+                                    if (string.Compare("end;", sr.ReadLine()) == 0)
+                                    {
+                                        break;
+                                    }
+
                                 }
-
                             }
                         }
+                        richTextBox2.AppendText(text.ToString());
                     }
-                            richTextBox2.AppendText(text.ToString());   
-                }
-            }catch (Exception ex)
+                } 
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex);   //TODO сохранять логи ошибок в файл
-                } 
+                }
+            }
         }
     }
 }
+
