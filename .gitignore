@@ -21,3 +21,6 @@ bin/Debug/Shool2.exe
 *.pdb
 *.txt
 *.cache
+.vs/Shool2/project-colors.json
+*.json
+.vs/Shool2/v17/.suo
