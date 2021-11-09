@@ -244,7 +244,7 @@ namespace Shool2
 
         private void panel1_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.All;
+            /*e.Effect = DragDropEffects.All;
             string pathLocal = @"C:\Users\rothm\Desktop\output\" + materialTextBox1.Text + ".txt";
             richTextBox2.AppendText("Данные скопированы!");
 
@@ -256,7 +256,8 @@ namespace Shool2
                     sw.WriteLine("текст из файла");
                     sw.WriteLine("end;");
                 }
-            }
+            }*/
+
 
 
             // Login -> D&D файла -> Считываем и добавляек к файлу юзера
@@ -265,7 +266,7 @@ namespace Shool2
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
             //TODO Debug drop text
-            string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
+            /*string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
             string[] fileGet = (string[])e.Data.GetData(DataFormats.FileDrop);
             string fileNewplace = fileGet[0];
             string line = string.Empty;
@@ -333,14 +334,13 @@ namespace Shool2
             //string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
             // if (files == null || files.Length == 0) return;
             //  textBox1.Text = files.First(); 
-            #endregion
+            
         }
 
             private void button2_Click_1(object sender, EventArgs e)
             {
                 string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
                 StringBuilder text = new StringBuilder();
-                string loosePart = "";
                 string line = "";
             
                 
