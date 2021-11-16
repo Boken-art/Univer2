@@ -12,7 +12,7 @@ namespace Shool2
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -24,19 +24,19 @@ namespace Shool2
             //Person restoredPerson = JsonSerializer.Deserialize<Person>(json);
             //Console.WriteLine(restoredPerson);
 
-            using (FileStream fs = new FileStream("user.json", FileMode.OpenOrCreate))
+           /* using (FileStream fs = new FileStream("user.json", FileMode.OpenOrCreate))    
             {
                 Person tom = new Person() { Id = 35, Name = "Tom" };
                 await JsonSerializer.SerializeAsync<Person>(fs, tom);
                 Console.WriteLine("Data has been saved to file");
             }
-
+             
             // чтение данных
             using (FileStream fs = new FileStream("user.json", FileMode.OpenOrCreate))
             {
                 Person restoredPerson = await JsonSerializer.DeserializeAsync<Person>(fs);
                 Console.WriteLine($"Name: {restoredPerson.Name}  Age: {restoredPerson.Id}");
-            }
+            }*/
         }
     }
 }

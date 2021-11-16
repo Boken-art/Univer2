@@ -306,6 +306,7 @@
             // 
             // panel1
             // 
+            this.panel1.AllowDrop = true;
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel1.BackgroundImage = global::Shool2.Properties.Resources.Upload;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -314,6 +315,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 52);
             this.panel1.TabIndex = 12;
+            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
+            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
             // studentBindingSource
             // 

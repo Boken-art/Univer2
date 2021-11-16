@@ -3,8 +3,9 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-//using System.IO.File;
+using System.Threading.Tasks;
 using System.Text;
+using System.Text.Json;
 
 namespace Shool2
 {
@@ -20,6 +21,7 @@ namespace Shool2
         //private string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
         private int min = 10000;
         private int max = 20000;
+        
         #endregion
 
         public Form1()
@@ -39,32 +41,33 @@ namespace Shool2
         {
             this.BackColor = Color.FromArgb(41, 44, 51);
 
-
-
-
-
             int userid = _random.Next(min, max);
 
-            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid, label);
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid  , label);
             richTextBox1.AppendText(user.name + Environment.NewLine);
-
+            CreateUserFile(user.userid);
 
             // string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
             string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + user.name + ".txt";
+            
+        }
 
-            if (!File.Exists(path))
+        private async Task CreateUserFile (int userid)
+        {
+            var options = new JsonSerializerOptions
             {
-                // Create a file to write to.
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.Write(userid + "/");
-                    sw.Write(user.name + "/");
-                    sw.Write(label + "/");
-                    sw.WriteLine(user.pasword);
+                WriteIndented = true,
+                IgnoreNullValues = true
+            };
 
-                }
+            var filename = userid.ToString();
+            using (FileStream fs = new FileStream(filename + ".json", FileMode.OpenOrCreate))
+            {
+                Person user = new Person() {  Name = "Tom", Id = 121456 };
+                await JsonSerializer.SerializeAsync<Person>(fs, user, options);
+                Console.WriteLine("Data has been saved to file");
+            
             }
-
 
         }
 
@@ -244,7 +247,7 @@ namespace Shool2
 
         private void panel1_DragEnter(object sender, DragEventArgs e)
         {
-            /*e.Effect = DragDropEffects.All;
+            e.Effect = DragDropEffects.All;
             string pathLocal = @"C:\Users\rothm\Desktop\output\" + materialTextBox1.Text + ".txt";
             richTextBox2.AppendText("Данные скопированы!");
 
@@ -256,7 +259,7 @@ namespace Shool2
                     sw.WriteLine("текст из файла");
                     sw.WriteLine("end;");
                 }
-            }*/
+            }
 
 
 
@@ -266,7 +269,7 @@ namespace Shool2
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
             //TODO Debug drop text
-            /*string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
+            string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
             string[] fileGet = (string[])e.Data.GetData(DataFormats.FileDrop);
             string fileNewplace = fileGet[0];
             string line = string.Empty;
@@ -334,10 +337,11 @@ namespace Shool2
             //string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
             // if (files == null || files.Length == 0) return;
             //  textBox1.Text = files.First(); 
-            
+            #endregion
+
         }
 
-            private void button2_Click_1(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
             {
                 string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
                 StringBuilder text = new StringBuilder();
