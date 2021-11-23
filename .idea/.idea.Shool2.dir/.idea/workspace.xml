@@ -37,6 +37,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -83,6 +84,10 @@
       <workItem from="1633103141098" duration="941000" />
       <workItem from="1633107112019" duration="1222000" />
       <workItem from="1633449953908" duration="603000" />
+      <workItem from="1637347255087" duration="1008000" />
+      <workItem from="1637683378583" duration="683000" />
+      <workItem from="1637685361398" duration="1666000" />
+      <workItem from="1637691015237" duration="629000" />
     </task>
     <servers />
   </component>

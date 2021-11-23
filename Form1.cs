@@ -15,7 +15,7 @@ namespace Shool2
         private Settings _settings { get => settings; set => settings = value; }
         private Settings settings;
         private readonly Random _random = new Random();
-        private string label = "user";
+        private string Label = "";
         private string logPath = @"C:\Users\hioli\OneDrive\Рабочий стол\output\";
         private StringBuilder logger = new StringBuilder();
         //private string pathFile = @"C:\Users\hioli\OneDrive\Рабочий стол\output\dragDrop\";
@@ -35,7 +35,15 @@ namespace Shool2
             this.BackColor = Color.FromArgb(41, 44, 51);
         }
 
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Label = "Teacher";
+        }
 
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            Label = "Student";
+        }
 
         private void sendText(object sender, EventArgs e)
         {
@@ -43,16 +51,17 @@ namespace Shool2
 
             int userid = _random.Next(min, max);
 
-            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid  , label);
+            User user = new User(textBoxName.Text, textBoxSur.Text, textBoxPassword.Text, userid  , Label);
             richTextBox1.AppendText(user.name + Environment.NewLine);
-            CreateUserFile(user.userid);
+            _ = CreateUserFile(user);
+            
 
             // string path = @"C:\Users\rothm\Desktop\output\" + user.name +".txt";
             string path = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + user.name + ".txt";
             
         }
-
-        private async Task CreateUserFile (int userid)
+//todo make login read json 
+        private async Task CreateUserFile (User user) //сохранять того юзверя, которого создаем через форму
         {
             var options = new JsonSerializerOptions
             {
@@ -60,16 +69,23 @@ namespace Shool2
                 IgnoreNullValues = true
             };
 
-            var filename = userid.ToString();
+            var filename = user.userid;
             using (FileStream fs = new FileStream(filename + ".json", FileMode.OpenOrCreate))
             {
-                Person user = new Person() {  Name = "Tom", Id = 121456 };
-                await JsonSerializer.SerializeAsync<Person>(fs, user, options);
+                await JsonSerializer.SerializeAsync<User>(fs, user, options);
                 Console.WriteLine("Data has been saved to file");
             
             }
 
         }
+
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         #region Elements
         private void AddWork()
@@ -161,18 +177,7 @@ namespace Shool2
         {
 
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-            label = "Student";
-        }
-
-        private void radioButton2_CheckedChange(object sender, EventArgs e)
-        {
-            label = "Teacher";
-        }
-
+        
                 private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -193,34 +198,24 @@ namespace Shool2
         #endregion
 
 
-        private void materialButton1_Click(object sender, EventArgs e) //LOGIN
+        private async Task materialButton1_Click(object sender, EventArgs e) 
         {
-            //Check login
-            string pathLocal = @"C:\Users\hioli\OneDrive\Рабочий стол\output\" + materialTextBox1.Text + ".txt";
-
+                    
             try
             {
-                File.ReadAllText(pathLocal);
-                var user_password = string.Empty;
-                using (StreamReader sr = File.OpenText(pathLocal))
+
+                using (FileStream fs = new FileStream(textBoxName.Text + ".json", FileMode.OpenOrCreate))
                 {
-
-                    string s = string.Empty;
-                    //Check user file not empty
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        string[] items = s.Split('/');
-                        string elem = items[3];    // TODO looger разобраться
-                        user_password = elem;
-                        var user_type = items[2];
-                    }
-
+                     User loginData = await JsonSerializer.DeserializeAsync<User>(fs);
+                
+                    
                     //Check password correct
-                    if (user_password != materialTextBox2.Text)
+                    if (loginData.password != materialTextBox2.Text)
                     {
                         richTextBox1.AppendText("Password error  \n");
                     }
                 }
+
                 richTextBox1.AppendText("Login successful \n"); //После всех действий - сообщение ОК
             } 
             catch (Exception ex)
@@ -380,7 +375,15 @@ namespace Shool2
                 }
             }
 
-        
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

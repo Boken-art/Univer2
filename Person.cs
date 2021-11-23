@@ -12,13 +12,14 @@ namespace Shool2
         {
         }
 
-        public Person(int id, string name)
+        public Person(string password, string name, string surename)
         {
-            Id = id;
+            Password = password;
             Name = name;
+            
         }
 
-        public int Id {  get; set; }
+        public string Password {  get; set; }
         public string Name { get; set; }
     }
 

@@ -5,18 +5,18 @@
         //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True
         public string name;
         public string sur;
-        public string pasword;
+        public string password;
         public int userid;
         public string label;
 
         public User() { }
 
-        public User(string name, string sur, string pasword, int userid, string label)
+        public User(string name, string sur, string password, int userid, string label)
         {
             this.name = name;
             this.sur = sur;
             this.userid = userid;
-            this.pasword = pasword;
+            this.password = password;
             this.label = label;
         }
 
@@ -34,12 +34,17 @@
 
         public string Pasword
         {
-            get { return pasword; }
-            set { pasword = value; }
+            get { return password; }
+            set { password = value; }
         }
-        public string GetLabel
+        public string Label
         {
             get { return label; }
+            set { }
+        }
+        public int Id
+        {
+            get { return userid; }
             set { }
         }
 
